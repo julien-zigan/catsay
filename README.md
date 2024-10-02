@@ -3,7 +3,7 @@
 
 ## A simple cli Program 
 
-### A project from S. Lyu and A. Rzeznik, *Practical Rust Projects*
+### A project from **S. Lyu and A. Rzeznik, *Practical Rust Projects***
 #### https://doi.org/10.1007/978-1-4842-93331-7_2
 
 

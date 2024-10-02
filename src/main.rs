@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    let message = std::env::args();
+
+    for argument in message {
+        println!("{}", argument);
+    }
 }
