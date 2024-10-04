@@ -1,31 +1,18 @@
+mod options;
+
+use crate::options::Options;
 use anyhow::{Context, Result};
-use clap::Parser;
 use colored::Colorize;
 use std::io::{self, Read};
 
-#[derive(Parser)]
-struct Options {
-    #[clap(default_value = "Meow!")]
-    /// What the cat says
-    message: String,
 
-    #[clap(short = 'd', long = "dead")]
-    /// Make the cat appear dead
-    dead: bool,
-
-    #[clap(short = 'f', long = "file")]
-    /// Load the cat picture from the specified file
-    catfile: Option<std::path::PathBuf>,
-
-    #[clap(short = 'i', long = "stdin")]
-    /// Read the message from stdin instead of the argument
-    stdin: bool,
-}
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let options = Options::parse();
+
+    let options = Options::new();
 
     let mut message = String::new();
+
     if options.stdin {
         io::stdin().read_to_string(&mut message)?;
     } else {
