@@ -30,7 +30,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     println!();
-    println!("{}", message.red().bold().on_bright_yellow());
+    println!("{}", message.yellow().underline().on_purple());
 
     match &options.catfile {
         Some(path) => {
